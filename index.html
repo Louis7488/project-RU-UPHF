@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LH Apps | Applications Indépendantes Android & PWA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#131b2e',
+                        accentBlue: '#3b82f6',
+                        accentPurple: '#8b5cf6',
+                        accentCyan: '#06b6d4',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(19, 27, 46, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-button {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s ease;
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 font-sans antialiased selection:bg-accentBlue selection:text-white min-h-screen flex flex-col justify-between">
+
+    <!-- En-tête / Navigation -->
+    <header class="sticky top-0 z-50 glass border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accentBlue to-accentPurple flex items-center justify-center font-bold text-white text-xl shadow-lg">
+                    LH
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">LH Apps</span>
+                    <span class="block text-xs text-accentBlue font-medium">INDEPENDENT DEV</span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#apps" class="hover:text-accentBlue transition-colors">Nos Apps</a>
+                <a href="#download" class="hover:text-accentBlue transition-colors">Télécharger l'APK</a>
+                <a href="#stores" class="hover:text-accentBlue transition-colors">Stores Officiels</a>
+                <a href="#faq" class="hover:text-accentBlue transition-colors">FAQ</a>
+            </nav>
+
+            <a href="https://github.com/Louis7488/project-RU-UPHF/releases/tag/v1.0.1" target="_blank" rel="noopener" class="glass px-4 py-2 rounded-lg border border-gray-700 hover:border-accentBlue text-sm font-semibold flex items-center space-x-2 transition-all">
+                <i class="fab font-bold fa-github"></i>
+                <span>Release v1.0.1</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Section Hero -->
+    <main class="flex-grow">
+        <section class="relative py-20 overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-darkBg to-darkBg pointer-events-none"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-accentBlue text-xs font-semibold mb-6">
+                        <span class="w-2 h-2 rounded-full bg-accentCyan animate-pulse"></span>
+                        <span>Développeur Android & PWA Indépendant</span>
+                    </span>
+                    <h1 class="text-4xl sm:text-6xl font-black tracking-tight mb-6 leading-tight">
+                        Applications <span class="bg-clip-text text-transparent bg-gradient-to-r from-accentBlue via-accentPurple to-accentCyan">rapides, simples</span> et 100% indépendantes.
+                    </h1>
+                    <p class="text-lg text-gray-400 leading-relaxed mb-8">
+                        Découvre nos projets conçus pour simplifier le quotidien étudiant et optimiser ton expérience sur smartphone sans publicité ni traçage.
+                    </p>
+
+                    <!-- Bouton Téléchargement Direct APK -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="https://github.com/Louis7488/project-RU-UPHF/releases/download/v1.0.1/UPHF_RU_.apk" download class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-accentBlue to-accentPurple text-white font-bold text-lg glow-button flex items-center justify-center space-x-3">
+                            <i class="fas fa-download text-xl"></i>
+                            <span>Télécharger l'APK (.apk)</span>
+                        </a>
+                        <a href="https://github.com/Louis7488/project-RU-UPHF/releases/tag/v1.0.1" target="_blank" rel="noopener" class="w-full sm:w-auto px-6 py-4 rounded-xl glass hover:bg-gray-800 text-gray-300 font-semibold flex items-center justify-center space-x-2 border border-gray-700">
+                            <i class="fab fa-github text-xl"></i>
+                            <span>Notes de la version v1.0.1</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Carte Application Phare (RU UPHF) -->
+                <div id="apps" class="max-w-4xl mx-auto glass rounded-3xl p-8 border border-gray-800 relative overflow-hidden shadow-2xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="inline-block px-3 py-1 rounded-md bg-purple-500/10 text-accentPurple text-xs font-bold uppercase tracking-wider mb-3">
+                                Application Vedette
+                            </div>
+                            <h2 class="text-3xl font-extrabold mb-3">RU UPHF</h2>
+                            <p class="text-accentCyan font-medium text-sm mb-4">Le Ronzier - Campus Les Tertiales (Valenciennes)</p>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                Suis l'affluence en temps réel au Restaurant Universitaire Le Ronzier. Évite les longues files d'attente et organise tes pauses déjeuner en toute simplicité.
+                            </p>
+                            
+                            <!-- Badges Fonctionnalités -->
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">
+                                    <i class="fas fa-bolt text-yellow-400 mr-1"></i> Affluence en Direct
+                                </span>
+                                <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">
+                                    <i class="fas fa-shield-alt text-green-400 mr-1"></i> Sans Pub
+                                </span>
+                                <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">
+                                    <i class="fas fa-mobile-alt text-blue-400 mr-1"></i> APK Léger (5 Mo)
+                                </span>
+                            </div>
+
+                            <a href="https://github.com/Louis7488/project-RU-UPHF/releases/download/v1.0.1/UPHF_RU_.apk" download class="inline-flex items-center space-x-2 text-accentBlue hover:text-accentPurple font-bold transition-colors">
+                                <span>Télécharger le binaire UPHF_RU_.apk</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <!-- Visuel d'illustration / Mockup -->
+                        <div class="bg-darkBg/80 rounded-2xl p-6 border border-gray-800 text-center relative flex flex-col items-center justify-center min-h-[260px]">
+                            <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-accentBlue via-accentPurple to-accentCyan p-1 shadow-lg mb-4">
+                                <div class="w-full h-full bg-darkBg rounded-[14px] flex items-center justify-center">
+                                    <i class="fas fa-utensils text-3xl text-accentCyan"></i>
+                                </div>
+                            </div>
+                            <h3 class="font-bold text-lg text-gray-200">RU Le Ronzier</h3>
+                            <div class="mt-3 inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-semibold">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                                <span>Affluence : Fluide (Temps d'attente faible)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Telechargement Direct -->
+        <section id="download" class="py-16 bg-cardBg/40 border-y border-gray-800">
+            <div class="max-w-5xl mx-auto px-4 text-center">
+                <i class="fas fa-file-archive text-5xl text-accentBlue mb-4"></i>
+                <h2 class="text-3xl font-extrabold mb-4">Téléchargement Direct de l'APK</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-8">
+                    Installe directement l'application sur ton smartphone Android sans passer par une boutique en ligne.
+                </p>
+                
+                <div class="glass p-6 rounded-2xl max-w-lg mx-auto border border-gray-700 flex flex-col items-center">
+                    <div class="flex items-center space-x-4 mb-4 text-left w-full">
+                        <div class="w-12 h-12 rounded-xl bg-accentBlue/20 flex items-center justify-center text-accentBlue font-bold text-xl">
+                            <i class="fas fa-android"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">UPHF_RU_.apk</h4>
+                            <p class="text-xs text-gray-400">Version 1.0.1 • ~5.09 Mo • Android 5.0+</p>
+                        </div>
+                    </div>
+
+                    <a href="https://github.com/Louis7488/project-RU-UPHF/releases/download/v1.0.1/UPHF_RU_.apk" download class="w-full py-3 rounded-xl bg-accentBlue hover:bg-blue-600 text-white font-bold transition-all text-center flex items-center justify-center space-x-2">
+                        <i class="fas fa-download"></i>
+                        <span>Télécharger le fichier APK</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Stores Officiels -->
+        <section id="stores" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-extrabold mb-4">Disponible sur les Stores Officiels</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-12">
+                    Retrouve également nos applications sur les magasins d'applications officiels de tes constructeurs préférés.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Galaxy Store -->
+                    <div class="glass p-6 rounded-2xl border border-gray-800 text-left hover:border-accentBlue transition-all">
+                        <i class="fas fa-store text-2xl text-pink-500 mb-3"></i>
+                        <h3 class="font-bold text-lg mb-1">Samsung Galaxy Store</h3>
+                        <p class="text-xs text-gray-400 mb-4">Pour tous les smartphones Samsung Galaxy.</p>
+                        <span class="inline-block px-3 py-1 bg-gray-800 text-gray-400 text-xs rounded-md font-medium">Bientôt disponible</span>
+                    </div>
+
+                    <!-- Honor App Market -->
+                    <div class="glass p-6 rounded-2xl border border-gray-800 text-left hover:border-accentBlue transition-all">
+                        <i class="fas fa-mobile text-2xl text-blue-400 mb-3"></i>
+                        <h3 class="font-bold text-lg mb-1">Honor App Market</h3>
+                        <p class="text-xs text-gray-400 mb-4">Pour les smartphones Honor.</p>
+                        <span class="inline-block px-3 py-1 bg-gray-800 text-gray-400 text-xs rounded-md font-medium">En cours de validation</span>
+                    </div>
+
+                    <!-- Huawei AppGallery -->
+                    <div class="glass p-6 rounded-2xl border border-gray-800 text-left hover:border-accentBlue transition-all">
+                        <i class="fas fa-shopping-bag text-2xl text-red-500 mb-3"></i>
+                        <h3 class="font-bold text-lg mb-1">Huawei AppGallery</h3>
+                        <p class="text-xs text-gray-400 mb-4">Pour tous les téléphones Huawei.</p>
+                        <span class="inline-block px-3 py-1 bg-gray-800 text-gray-400 text-xs rounded-md font-medium">Bientôt disponible</span>
+                    </div>
+
+                    <!-- Vivo V-Appstore -->
+                    <div class="glass p-6 rounded-2xl border border-gray-800 text-left hover:border-accentBlue transition-all">
+                        <i class="fas fa-boxes text-2xl text-purple-400 mb-3"></i>
+                        <h3 class="font-bold text-lg mb-1">Vivo V-Appstore</h3>
+                        <p class="text-xs text-gray-400 mb-4">Pour les smartphones Vivo & iQOO.</p>
+                        <span class="inline-block px-3 py-1 bg-gray-800 text-gray-400 text-xs rounded-md font-medium">Bientôt disponible</span>
+                    </div>
+
+                    <!-- Palm Store -->
+                    <div class="glass p-6 rounded-2xl border border-gray-800 text-left hover:border-accentBlue transition-all">
+                        <i class="fas fa-cubes text-2xl text-amber-500 mb-3"></i>
+                        <h3 class="font-bold text-lg mb-1">Palm Store</h3>
+                        <p class="text-xs text-gray-400 mb-4">Pour TECNO, Infinix et itel.</p>
+                        <span class="inline-block px-3 py-1 bg-gray-800 text-gray-400 text-xs rounded-md font-medium">Bientôt disponible</span>
+                    </div>
+
+                    <!-- Google Play Store -->
+                    <div class="glass p-6 rounded-2xl border border-gray-800 text-left hover:border-accentBlue transition-all">
+                        <i class="fab fa-google-play text-2xl text-green-400 mb-3"></i>
+                        <h3 class="font-bold text-lg mb-1">Google Play Store</h3>
+                        <p class="text-xs text-gray-400 mb-4">Magasin standard Android.</p>
+                        <a href="https://github.com/Louis7488/project-RU-UPHF/releases/download/v1.0.1/UPHF_RU_.apk" download class="text-xs text-accentBlue hover:underline font-semibold">Télécharger l'APK direct →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section FAQ -->
+        <section id="faq" class="py-16 bg-cardBg/30 border-t border-gray-800">
+            <div class="max-w-3xl mx-auto px-4">
+                <h2 class="text-2xl font-extrabold text-center mb-8">Foire Aux Questions</h2>
+                <div class="space-y-4">
+                    <div class="glass p-5 rounded-xl border border-gray-800">
+                        <h4 class="font-bold text-accentCyan mb-2">Comment installer le fichier .APK sur mon téléphone ?</h4>
+                        <p class="text-sm text-gray-400">
+                            Après le téléchargement, ouvre le fichier `UPHF_RU_.apk`. Si ton téléphone le demande, autorise l'installation depuis des sources inconnues dans les paramètres de ton navigateur.
+                        </p>
+                    </div>
+                    <div class="glass p-5 rounded-xl border border-gray-800">
+                        <h4 class="font-bold text-accentCyan mb-2">L'application est-elle gratuite ?</h4>
+                        <p class="text-sm text-gray-400">
+                            Oui, toutes les applications proposées par LH Apps sont 100% gratuites, sans abonnement, sans publicité et sans collecte de données personnelles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="glass border-t border-gray-800 py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+            <p class="mb-2">© LH Apps — Développeur Indépendant</p>
+            <p class="text-xs text-gray-600">Projet non affilié directement aux marques citées. Déploiement via GitHub Releases.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
